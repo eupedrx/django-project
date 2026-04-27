@@ -1,4 +1,4 @@
-from rest_framework import viewsets, status
+from rest_framework import viewsets, status, permissions
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
@@ -28,6 +28,7 @@ class AnimalViewSet(viewsets.ModelViewSet):
     - ?status=acolhido
     - ?status=disponivel
     - ?status=adotado
+    - ?disponivel=true
     - ?search=Golden (busca em raça)
     - ?ordering=-data_acolhimento (ordenação)
     """
@@ -40,6 +41,26 @@ class AnimalViewSet(viewsets.ModelViewSet):
     search_fields = ['raca']
     ordering_fields = ['data_acolhimento', 'data_adocao', 'created_at']
     ordering = ['-created_at']
+
+    def get_permissions(self):
+        if self.request.method in permissions.SAFE_METHODS:
+            return [permissions.AllowAny()]
+        return [IsStaffUser()]
+
+    def get_queryset(self):
+        queryset = Animal.objects.all()
+        disponivel = self.request.query_params.get('disponivel')
+
+        if disponivel is None:
+            return queryset
+
+        normalized_disponivel = disponivel.strip().lower()
+        if normalized_disponivel in {'1', 'true', 'sim', 'yes'}:
+            return queryset.filter(status='disponivel')
+        if normalized_disponivel in {'0', 'false', 'nao', 'não', 'no'}:
+            return queryset.exclude(status='disponivel')
+
+        return queryset
     
     @action(detail=False, methods=['get'])
     def disponiveis(self, request):
