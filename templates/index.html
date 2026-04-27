@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+{% load static %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZePereira | Adoção de Animais</title>
+  <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container navbar__content">
+      <a class="brand" href="#inicio" aria-label="Página inicial">
+        <img src="{% static 'img/logo.jpg' %}" alt="Logo da ZePereira Adoção" class="brand__logo" />
+      </a>
+      <nav aria-label="Navegação principal">
+        <ul class="menu">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#animais">Animais</a></li>
+          <li><a href="#localizacao">Localização</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="container hero__grid">
+        <div>
+          <h2>Cada adoção transforma duas vidas: a do animal e a sua.</h2>
+          <p>
+            Ajude nosso projeto de adoção de animais com divulgação e adoção responsável.
+            Nosso foco é acolher, tratar e encontrar um novo lar para cada pet resgatado.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#animais">Ver animais disponíveis</a>
+            <a class="btn btn--ghost" href="#localizacao">Visitar o abrigo</a>
+          </div>
+        </div>
+
+        <figure class="hero__photo">
+          <img
+            src="{% static 'img/banner.jpg' %}"
+            alt="Cão resgatado aguardando adoção"
+            class="banner"/>
+        </figure>
+      </div>
+    </section>
+
+    <section id="animais">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Animais para adoção</h2>
+          <button id="load-animals" class="btn btn--ghost" type="button">Atualizar lista</button>
+        </div>
+
+        <p id="animals-feedback" class="feedback"></p>
+        <div class="animals-carousel">
+          <button id="animals-prev" class="carousel-btn" type="button" aria-label="Animal anterior">‹</button>
+          <div id="animals-viewport" class="animals-viewport">
+            <ul id="animals-list" class="animals-track" aria-live="polite"></ul>
+          </div>
+          <button id="animals-next" class="carousel-btn" type="button" aria-label="Próximo animal">›</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="localizacao" class="footer">
+    <div class="container">
+      <h2>Onde estamos</h2>
+      <p>
+        Use o iframe abaixo para mostrar a localização do abrigo no Google Maps.
+        Você pode trocar a URL do <code>src</code> pelo seu endereço.
+      </p>
+      <iframe
+        class="map"
+        title="Mapa da instituição de adoção"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14630.001841356297!2d-46.65001981883594!3d-23.55028011894615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59b6f6d0f13d%3A0x9ef7f5377f3cd9f!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1711900000000!5m2!1spt-BR!2sbr">
+      </iframe>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>
