@@ -52,16 +52,25 @@ body {
 }
 
 .brand {
-  display: inline-flex;
-  align-items: center;
+  display: inline-grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  padding: 7px;
   text-decoration: none;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 22px rgba(47, 42, 38, 0.12);
+  overflow: hidden;
 }
 
 .brand__logo {
   display: block;
-  width: 140px;
-  height: 56px;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 999px;
 }
 
 .menu {
@@ -84,6 +93,38 @@ body {
 
 .menu a:hover {
   background: var(--secondary);
+}
+
+.navbar__nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu--social {
+  margin-left: 20px;
+}
+
+.menu--social a.menu__instagram {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.menu--social a.menu__instagram:hover {
+  background: var(--secondary);
+  border-color: var(--border);
+}
+
+.menu__instagram-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
 }
 
 section {
@@ -338,6 +379,17 @@ section {
     flex-direction: column;
     justify-content: center;
     padding: 10px 0;
+  }
+
+  .navbar__nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .menu--social {
+    margin-left: 0;
   }
 
   .hero__grid {
