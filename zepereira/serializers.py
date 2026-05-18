@@ -17,6 +17,7 @@ class AnimalSerializer(serializers.ModelSerializer):
             'data_acolhimento',
             'data_adocao',
             'status',
+            'instagram_post_url',
             'status_display',
             'created_at',
             'updated_at',

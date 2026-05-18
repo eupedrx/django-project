@@ -22,6 +22,11 @@ class Animal(models.Model):
         choices=STATUS_CHOICES,
         default='acolhido'
     )
+    instagram_post_url = models.URLField(
+        'URL do Post no Instagram',
+        blank=True,
+        help_text='Opcional'
+    )
     
     # Campos de auditoria
     created_at = models.DateTimeField('Criado em', auto_now_add=True)

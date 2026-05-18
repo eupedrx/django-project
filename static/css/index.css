@@ -351,6 +351,15 @@ section {
   background: #efe7e1;
 }
 
+.animal-card__instagram-link {
+  color: var(--primary-strong);
+  font-weight: 600;
+}
+
+.animal-card__instagram-link:hover {
+  color: var(--primary);
+}
+
 .footer {
   background: #2f2a26;
   color: #faf6f3;

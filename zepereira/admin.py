@@ -7,7 +7,7 @@ class AnimalAdmin(admin.ModelAdmin):
     """
     Admin customizado para o model Animal.
     """
-    list_display = ['raca', 'status', 'data_acolhimento', 'data_adocao', 'created_at']
+    list_display = ['raca', 'status', 'instagram_post_url', 'data_acolhimento', 'data_adocao', 'created_at']
     list_filter = ['status', 'data_acolhimento']
     search_fields = ['raca']
     date_hierarchy = 'data_acolhimento'
@@ -15,7 +15,7 @@ class AnimalAdmin(admin.ModelAdmin):
     
     fieldsets = (
         ('Informações Básicas', {
-            'fields': ('raca', 'status')
+            'fields': ('raca', 'status', 'instagram_post_url')
         }),
         ('Datas', {
             'fields': ('data_acolhimento', 'data_adocao')

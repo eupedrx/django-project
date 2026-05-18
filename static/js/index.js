@@ -50,6 +50,20 @@ function createInfoRow(label, content) {
   return paragraph;
 }
 
+function createInstagramLink(url) {
+  if (!url) {
+    return "Ainda sem post de fotos";
+  }
+
+  const link = document.createElement("a");
+  link.href = url;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.className = "animal-card__instagram-link";
+  link.textContent = "Ver fotos no Instagram";
+  return link;
+}
+
 function buildAnimalCard(animal) {
   const item = document.createElement("li");
   item.className = "animal-card";
@@ -65,6 +79,7 @@ function buildAnimalCard(animal) {
   item.appendChild(createInfoRow("Status", statusBadge));
   item.appendChild(createInfoRow("Acolhimento", formatDate(animal.data_acolhimento)));
   item.appendChild(createInfoRow("Adoção", animal.data_adocao ? formatDate(animal.data_adocao) : "Ainda não adotado"));
+  item.appendChild(createInfoRow("Fotos", createInstagramLink(animal.instagram_post_url)));
 
   return item;
 }
