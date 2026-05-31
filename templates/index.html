@@ -17,6 +17,7 @@
         <ul class="menu menu--main">
           <li><a href="#inicio">Início</a></li>
           <li><a href="#animais">Animais</a></li>
+          <li><a href="#doacao">Doação</a></li>
           <li><a href="#localizacao">Localização</a></li>
         </ul>
         <ul class="menu menu--social">
@@ -49,6 +50,7 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section id="inicio" class="hero">
       <div class="container hero__grid">
         <div>
@@ -72,6 +74,7 @@
       </div>
     </section>
 
+    <!-- ANIMAIS -->
     <section id="animais">
       <div class="container">
         <div class="section-header">
@@ -89,20 +92,70 @@
         </div>
       </div>
     </section>
+
+    <!-- DOAÇÃO -->
+    <section id="doacao" class="doacao">
+      <div class="container doacao__grid">
+        <figure class="doacao__photo">
+          <img
+            src="{% static 'img/doe-dois-reais.jpg' %}"
+            alt="Campanha Doe 2 Reais - Instituto Zé Pereira" />
+        </figure>
+
+        <div class="doacao__content">
+          <span class="doacao__tag">Faça a diferença</span>
+          <h2>Qualquer doação salva vidas 🐾</h2>
+          <p>
+            Manter um abrigo funcionando exige esforço coletivo. Ração, vacinas, consultas veterinárias
+            e muito amor custam, e cada contribuição — por menor que seja — faz uma diferença real
+            na vida dos nossos animais resgatados.
+          </p>
+          <p>
+            Participe da nossa campanha <strong>"Doe Dois Reais"</strong>: uma iniciativa simples e
+            poderosa que mostra que, juntos, somos mais fortes. Doe qualquer valor via Pix e ajude
+            um animal a ter um futuro melhor.
+          </p>
+          <div class="doacao__pix">
+            <span class="doacao__pix-label">Chave Pix</span>
+            <span class="doacao__pix-key">55.873.829/0001-90</span>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <!-- FOOTER com história + mapa -->
   <footer id="localizacao" class="footer">
-    <div class="container">
-      <h2>Onde estamos</h2>
-      <p>
-      </p>
-      <iframe
-        class="map"
-        title="Mapa da instituição de adoção"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1162.805140812322!2d-42.62799627239541!3d-22.710041476939907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-BR!2sbr!4v1778528260131!5m2!1spt-BR!2sbr">
-      </iframe>
+    <div class="container footer__grid">
+
+      <div class="footer__historia">
+        <h2>Conheça a nossa história</h2>
+        <p>
+          Zé Pereira foi muito mais do que um cachorro de rua em Rio Bonito. Foi um verdadeiro símbolo
+          de afeto e resistência. Conhecido como o "Rei da Praça", conquistou o carinho da cidade com
+          seu jeito manso e presença marcante. Circulava entre lojas, agências bancárias e,
+          principalmente, pela Praça Fonseca Portela, onde recebia diariamente comida, carinho e
+          cuidados dos moradores. Mesmo sem um lar fixo, foi adotado por todos e escolheu viver cercado
+          de liberdade e amor coletivo.
+        </p>
+        <p>
+          Em sua homenagem, nasceu o Instituto Zé Pereira, que mantém vivo seu legado por meio da
+          proteção animal e da valorização da adoção responsável. Zé deixou saudade, mas também
+          inspiração, e hoje seu nome é lembrado a cada vida transformada por meio da adoção.
+        </p>
+      </div>
+
+      <div class="footer__mapa">
+        <h2>Onde estamos</h2>
+        <iframe
+          class="map"
+          title="Mapa da instituição de adoção"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1162.805140812322!2d-42.62799627239541!3d-22.710041476939907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-BR!2sbr!4v1778528260131!5m2!1spt-BR!2sbr">
+        </iframe>
+      </div>
+
     </div>
   </footer>
 

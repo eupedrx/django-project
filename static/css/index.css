@@ -159,10 +159,12 @@ section {
   flex-wrap: wrap;
   gap: 12px;
 }
-.banner{
+
+.banner {
   padding-top: 72px;
   transform: scale(1.8);
 }
+
 .btn {
   border: 0;
   border-radius: 999px;
@@ -360,19 +362,120 @@ section {
   color: var(--primary);
 }
 
+.doacao {
+  background: linear-gradient(135deg, #fff3ec 0%, #fff8f2 100%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.doacao__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.doacao__photo {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.doacao__photo img {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.doacao__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.doacao__tag {
+  display: inline-block;
+  background: var(--secondary);
+  color: var(--primary-strong);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.doacao__content h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.2;
+}
+
+.doacao__content p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.doacao__pix {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 20px;
+  box-shadow: var(--shadow);
+  width: fit-content;
+}
+
+.doacao__pix-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.doacao__pix-key {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
 .footer {
   background: #2f2a26;
   color: #faf6f3;
-  padding: 44px 0;
+  padding: 56px 0;
   margin-top: 20px;
 }
 
-.footer h2 {
-  margin-top: 0;
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
 }
 
-.footer p {
+.footer__historia h2,
+.footer__mapa h2 {
+  margin-top: 0;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+}
+
+.footer__historia p {
   color: #dfd4cc;
+  margin-bottom: 16px;
+  line-height: 1.75;
+  font-size: 0.97rem;
+}
+
+.footer__mapa h2 {
   margin-bottom: 16px;
 }
 
@@ -420,5 +523,15 @@ section {
 
   .animals-track {
     grid-auto-columns: minmax(75vw, 75vw);
+  }
+
+  .doacao__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
   }
 }
