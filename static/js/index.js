@@ -69,7 +69,7 @@ function buildAnimalCard(animal) {
   item.className = "animal-card";
 
   const title = document.createElement("h3");
-  title.textContent = animal.raca || "Raça não informada";
+  title.textContent = animal.nome || "Nome não informado";
   item.appendChild(title);
 
   const statusBadge = document.createElement("span");
@@ -77,8 +77,9 @@ function buildAnimalCard(animal) {
   statusBadge.textContent = animal.status_display || animal.status || "Sem status";
 
   item.appendChild(createInfoRow("Status", statusBadge));
+  item.appendChild(createInfoRow("Raça", animal.raca || "Não informada"));
+  item.appendChild(createInfoRow("Sexo", animal.sexo_display || animal.sexo || "Não informado"));
   item.appendChild(createInfoRow("Acolhimento", formatDate(animal.data_acolhimento)));
-  item.appendChild(createInfoRow("Adoção", animal.data_adocao ? formatDate(animal.data_adocao) : "Ainda não adotado"));
   item.appendChild(createInfoRow("Fotos", createInstagramLink(animal.instagram_post_url)));
 
   return item;

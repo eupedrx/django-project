@@ -1,5 +1,5 @@
 :root {
-  --bg: #fff8f2;
+  --bg: #f3e6dc;
   --surface: #ffffff;
   --text: #2f2a26;
   --muted: #6d635c;
@@ -38,7 +38,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 248, 242, 0.95);
+  background: rgba(243, 230, 220, 0.95);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
 }
@@ -363,7 +363,7 @@ section {
 }
 
 .doacao {
-  background: linear-gradient(135deg, #fff3ec 0%, #fff8f2 100%);
+  background: linear-gradient(135deg, #f0ded2 0%, #f3e6dc 100%);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
