@@ -128,6 +128,18 @@ body::before {
   transform: translateY(-1px);
 }
 
+.menu a.menu__admin {
+  border-color: rgba(96, 108, 56, 0.28);
+  background: var(--moss);
+  color: var(--surface-light);
+}
+
+.menu a.menu__admin:hover {
+  border-color: transparent;
+  background: var(--primary);
+  color: var(--surface-light);
+}
+
 .menu--social a.menu__instagram {
   width: 42px;
   height: 42px;
