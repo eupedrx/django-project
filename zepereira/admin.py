@@ -2,20 +2,25 @@ from django.contrib import admin
 from .models import Animal, MoneyDonation, ItemDonation
 
 
+admin.site.site_header = 'Instituto Zé Pereira'
+admin.site.site_title = 'Instituto Zé Pereira'
+admin.site.index_title = 'Painel administrativo'
+
+
 @admin.register(Animal)
 class AnimalAdmin(admin.ModelAdmin):
     """
     Admin customizado para o model Animal.
     """
-    list_display = ['raca', 'status', 'instagram_post_url', 'data_acolhimento', 'data_adocao', 'created_at']
-    list_filter = ['status', 'data_acolhimento']
-    search_fields = ['raca']
+    list_display = ['nome', 'raca', 'sexo', 'status', 'instagram_post_url', 'data_acolhimento', 'data_adocao', 'created_at']
+    list_filter = ['status', 'sexo', 'data_acolhimento']
+    search_fields = ['nome', 'raca']
     date_hierarchy = 'data_acolhimento'
     ordering = ['-created_at']
     
     fieldsets = (
         ('Informações Básicas', {
-            'fields': ('raca', 'status', 'instagram_post_url')
+            'fields': ('nome', 'raca', 'sexo', 'status', 'instagram_post_url')
         }),
         ('Datas', {
             'fields': ('data_acolhimento', 'data_adocao')
