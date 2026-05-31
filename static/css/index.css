@@ -422,6 +422,13 @@ section {
   color: var(--text);
 }
 
+.animal-card__info-row--status {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
 .animal-card__label {
   flex: 0 0 auto;
   color: var(--moss);
@@ -431,11 +438,17 @@ section {
 .animal-card__status {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
   min-height: 27px;
-  padding: 3px 10px;
+  padding: 5px 12px;
   border-radius: 999px;
   font-size: 0.84rem;
   font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  white-space: normal;
 }
 
 .animal-card__status--disponivel {

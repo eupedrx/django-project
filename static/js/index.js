@@ -42,6 +42,7 @@ function getAnimalsPayload(payload) {
 
 function createInfoRow(label, content) {
   const paragraph = document.createElement("p");
+  paragraph.className = "animal-card__info-row";
   const strong = document.createElement("span");
   strong.className = "animal-card__label";
   strong.textContent = `${label}: `;
@@ -76,7 +77,9 @@ function buildAnimalCard(animal) {
   statusBadge.className = `animal-card__status ${getStatusVariant(animal.status)}`;
   statusBadge.textContent = animal.status_display || animal.status || "Sem status";
 
-  item.appendChild(createInfoRow("Status", statusBadge));
+  const statusRow = createInfoRow("Status", statusBadge);
+  statusRow.classList.add("animal-card__info-row--status");
+  item.appendChild(statusRow);
   item.appendChild(createInfoRow("Raça", animal.raca || "Não informada"));
   item.appendChild(createInfoRow("Sexo", animal.sexo_display || animal.sexo || "Não informado"));
   item.appendChild(createInfoRow("Acolhimento", formatDate(animal.data_acolhimento)));
