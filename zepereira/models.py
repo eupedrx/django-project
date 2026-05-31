@@ -13,7 +13,20 @@ class Animal(models.Model):
         ('adotado', 'Adotado'),
     ]
     
+    SEXO_CHOICES = [
+        ('macho', 'Macho'),
+        ('femea', 'Fêmea'),
+        ('nao_informado', 'Não informado'),
+    ]
+    
+    nome = models.CharField('Nome', max_length=100)
     raca = models.CharField('Raça', max_length=100)
+    sexo = models.CharField(
+        'Sexo',
+        max_length=20,
+        choices=SEXO_CHOICES,
+        default='nao_informado'
+    )
     data_acolhimento = models.DateField('Data de Acolhimento')
     data_adocao = models.DateField('Data de Adoção', null=True, blank=True)
     status = models.CharField(
@@ -38,7 +51,7 @@ class Animal(models.Model):
         ordering = ['-created_at']
     
     def __str__(self):
-        return f"{self.raca} - {self.get_status_display()}"
+        return f"{self.nome} - {self.get_status_display()}"
     
     def clean(self):
         """
