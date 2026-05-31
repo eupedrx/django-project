@@ -8,12 +8,16 @@ from .models import Animal
 class AnimalPublicReadTests(APITestCase):
     def setUp(self):
         Animal.objects.create(
+            nome='Bob',
             raca='Vira-lata',
+            sexo='macho',
             data_acolhimento='2026-01-10',
             status='disponivel'
         )
         Animal.objects.create(
+            nome='Luna',
             raca='Poodle',
+            sexo='femea',
             data_acolhimento='2026-02-10',
             status='acolhido'
         )
@@ -39,7 +43,9 @@ class AnimalPublicReadTests(APITestCase):
 
     def test_create_animal_still_requires_authentication(self):
         payload = {
+            'nome': 'Thor',
             'raca': 'Labrador',
+            'sexo': 'macho',
             'data_acolhimento': '2026-03-15',
             'status': 'disponivel'
         }

@@ -8,12 +8,16 @@ class AnimalSerializer(serializers.ModelSerializer):
     """
     
     status_display = serializers.CharField(source='get_status_display', read_only=True)
+    sexo_display = serializers.CharField(source='get_sexo_display', read_only=True)
     
     class Meta:
         model = Animal
         fields = [
             'id',
+            'nome',
             'raca',
+            'sexo',
+            'sexo_display',
             'data_acolhimento',
             'data_adocao',
             'status',
